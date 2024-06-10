@@ -13,9 +13,18 @@ public class NotificationTask {
     private long chatId;
     private String taskText;
     private LocalDateTime taskClock;
+    private LocalDateTime reminderClock;
 
     public NotificationTask() {
 
+    }
+
+    public LocalDateTime getReminderClock() {
+        return reminderClock;
+    }
+
+    public void setReminderClock(LocalDateTime reminderClock) {
+        this.reminderClock = reminderClock;
     }
 
     public long getChatId() {
@@ -55,12 +64,12 @@ public class NotificationTask {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         NotificationTask task = (NotificationTask) o;
-        return id == task.id && chatId == task.chatId && Objects.equals(taskText, task.taskText) && Objects.equals(taskClock, task.taskClock);
+        return id == task.id && chatId == task.chatId && Objects.equals(taskText, task.taskText) && Objects.equals(taskClock, task.taskClock) && Objects.equals(reminderClock, task.reminderClock);
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(id, chatId, taskText, taskClock);
+        return Objects.hash(id, chatId, taskText, taskClock, reminderClock);
     }
 
     @Override
@@ -70,6 +79,7 @@ public class NotificationTask {
                 ", id=" + id +
                 ", taskText='" + taskText + '\'' +
                 ", taskClock=" + taskClock +
+                ", remiderClock=" + reminderClock +
                 '}';
     }
 }
