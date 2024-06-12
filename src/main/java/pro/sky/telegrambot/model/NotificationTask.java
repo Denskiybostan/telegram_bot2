@@ -1,5 +1,7 @@
 package pro.sky.telegrambot.model;
 
+import pro.sky.telegrambot.repositories.NotificationRepository;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
 import java.util.Objects;
@@ -82,4 +84,5 @@ public class NotificationTask {
                 ", remiderClock=" + reminderClock +
                 '}';
     }
+
 }

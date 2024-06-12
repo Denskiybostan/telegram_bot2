@@ -51,6 +51,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         updates.forEach(update -> {
             logger.info("Processing update", update);
             var message = update.message();
+
             if (message != null) {
                 var messageText = update.message().text();
                 var chatId = update.message().chat().id();
@@ -89,11 +90,14 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         task.setChatId(chat);
         task.setTaskText(reminderText);
         task.setTaskClock(reminderClock);
+        notificationRepository.save(new NotificationTask());
+
 
     }
     private void sendMessage(Long chat, String text) {
         SendMessage message = new SendMessage(chat, text);
     }
+
 
 
 }
