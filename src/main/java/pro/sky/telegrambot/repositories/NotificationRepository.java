@@ -9,4 +9,6 @@ import java.util.List;
 
 public interface NotificationRepository extends JpaRepository<NotificationTask, Long> {
     List<NotificationTask> findNotificationTaskByTaskClock(LocalDateTime time);
+
+    List<NotificationTask> findNotificationTaskByTaskReminderClock(LocalDateTime reminderClock);
 }
