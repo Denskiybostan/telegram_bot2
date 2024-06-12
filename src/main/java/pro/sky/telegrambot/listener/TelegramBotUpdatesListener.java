@@ -88,6 +88,7 @@ public class TelegramBotUpdatesListener implements UpdatesListener {
         NotificationTask task = new NotificationTask();
         task.setChatId(chat);
         task.setTaskText(reminderText);
+        task.setTaskClock(reminderClock);
 
     }
     private void sendMessage(Long chat, String text) {
